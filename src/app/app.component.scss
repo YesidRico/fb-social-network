@@ -1,0 +1,25 @@
+// Theme Colors
+$bg-default: #F0F2F5;
+$bg-white: #FFFFFF;
+
+.logo {
+  color: #026AE3;
+  width: 50px !important;
+}
+
+.mat-toolbar {
+  height: 58px;
+  position: fixed;
+  z-index: 99;
+  background-color: $bg-white;
+}
+
+.mat-sidenav-content {
+  padding-top: 80px;
+  background-color: $bg-default;
+}
+
+.post-card {
+  //height: 500px;
+  width: 450px;
+}
