@@ -12,9 +12,14 @@ export class PostService {
   constructor(
     private sseService: SseService,
     private http: HttpClient
-  ) {}
+  ) {
+  }
 
   getPosts(url: string): Observable<Array<PostModel>> {
     return this.http.get<Array<PostModel>>(url);
+  }
+
+  postEventSource(url: string): Observable<any> {
+    return this.sseService.getServerSentEvent(url);
   }
 }
