@@ -14,6 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
+import {HttpClientModule} from '@angular/common/http';
 
 const MATERIAL_MODULES = [
   MatToolbarModule,
@@ -32,6 +33,7 @@ const MATERIAL_MODULES = [
     BrowserAnimationsModule,
     FontAwesomeModule,
     FlexLayoutModule,
+    HttpClientModule,
     ...MATERIAL_MODULES
   ],
   providers: [],

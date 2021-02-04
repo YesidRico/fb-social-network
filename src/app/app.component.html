@@ -12,17 +12,18 @@
 <mat-sidenav-container>
   <mat-sidenav-content>
     <div class="news" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-      <mat-card class="post-card" *ngFor="let item of [1,2,3]">
+      <mat-card class="post-card" *ngFor="let item of posts$ | async">
         <mat-card-header>
           <img mat-card-avatar
-               src="https://scontent.feoh3-1.fna.fbcdn.net/v/t1.0-1/cp0/p50x50/37217712_2116869111974584_5257701468282028032_n.jpg?_nc_cat=102&ccb=2&_nc_sid=7206a8&_nc_eui2=AeFJYsRz8WoBNsWYN0zlSVgF_GzWX5UONqr8bNZflQ42qguLFBi138AQjaTfHVzbrc9xviilQEwKgspK2Gs1NY5O&_nc_ohc=WGvJcXm4FegAX-7KKqx&_nc_ht=scontent.feoh3-1.fna&tp=27&oh=e1eb26e1352d1af2dc2b110fcf901627&oe=603D02EF"
+               [src]="item.user.photoUrl"
                alt="">
-          <mat-card-title>Farid Rico</mat-card-title>
+          <mat-card-title>{{item.user.name}}</mat-card-title>
           <mat-card-subtitle>48 min</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <span>Server Sent Events | Spring Webflux</span>
-          <img style="margin-top: .5rem;" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="">
+          <span>{{item.description}}</span>
+          <img style="margin-top: .5rem;" mat-card-image [src]="item.photoUrl" alt="">
+          <span>Likes {{item.likes}}</span>
         </mat-card-content>
         <mat-card-actions>
           <button mat-button>Me gusta</button>
